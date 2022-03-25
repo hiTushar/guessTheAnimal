@@ -23,16 +23,16 @@ struct node * create_node(char *string){
 }
 
 int main(int argc, char *argv[]) {
-    char animal[50]; // new animal name buffer
-    char buffer[3]; // user input buffer
-    int c; // current character from buffer
+    char animal[50];       // new animal name buffer
+    char buffer[3];        // user input buffer
+    int c;                 // current character from buffer
     struct node **current; // current tree traversal node 
-    FILE *in; // input file for training data or typing 
-    struct node *new; // newly created node
-    FILE *out; // output file for saving training data 
-    char *p; // newline removal pointer 
-    char question[100]; // new question buffer 
-    struct node *root; // root of the tree of knowledge
+    FILE *in;              // input file for training data or typing 
+    struct node *new;      // newly created node
+    FILE *out;             // output file for saving training data 
+    char *p;               // newline removal pointer 
+    char question[100];    // new question buffer 
+    struct node *root;     // root of the tree of knowledge
 
     in = out = (FILE *)0;
 
@@ -67,14 +67,14 @@ int main(int argc, char *argv[]) {
     root->yes = create_node("dog"); 
     root->no = create_node("cat");
 
-    for (;;) { // play games until the user quits.
+    for (;;) {           // play games until the user quits.
         if (in == stdin)
             (void)printf("Think of an animal.\n");
 
         current = &root; // start at the top
         
-        for (;;) { // play a game
-            for(;;) { // get valid user input
+        for (;;) {       // play a game
+            for(;;) {    // get valid user input
                 if (in  == stdin) {
                     if((*current)->yes == (struct node *)0) 
                         (void)printf("Is it a ");
