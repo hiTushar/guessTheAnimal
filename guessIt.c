@@ -12,11 +12,12 @@ struct node * create_node(char *string){
     struct node *memory; // newly allocated memory
 
     if ((memory = (struct node *)malloc(sizeof (struct node) + strlen(string))) == (struct node *)0) {
-    (void)fprintf(stderr, "gta: out of memory.\n");
-    exit(-1);
+        (void)fprintf(stderr, "gta: out of memory.\n");
+        exit(-1);
     }
 
     (void)strcpy(memory->string, string);
+    
     memory->yes = memory->no = (struct node *)0;
 
     return (memory);
